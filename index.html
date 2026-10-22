@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b50">
+  <meta name="description" content="SAVIO TECH: registro de computadoras, reportes de fallas e historial de mantenimiento del laboratorio. Proyecto de Primero de Bachillerato Técnico.">
+  <title>SAVIO TECH · Laboratorio</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./config.js"></script>
+  <script type="module" src="./js/app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir al contenido</a>
+  <div id="login-screen" class="login-layout">
+    <section class="login-story" aria-label="Presentación de SAVIO TECH">
+      <div class="story-top"><span class="mini-mark">ST</span><span>EXPOSAVIO 2026 <i></i> DESARROLLO DE SOFTWARE</span></div>
+      <div class="story-content">
+        <span class="eyebrow light">MANTENIMIENTO Y PREVENCIÓN</span>
+        <h1>Cuidamos el laboratorio.<br><em>Seguimos aprendiendo.</em></h1>
+        <p>Cada equipo tiene una historia. Registra una falla, sigue su atención y construye un laboratorio mejor organizado.</p>
+        <div class="lab-visual" aria-hidden="true">
+          <div class="visual-top"><span><i class="live-dot"></i> LABORATORIO DE COMPUTACIÓN</span><span>01 / SAVIO TECH</span></div>
+          <div class="visual-monitors">
+            <div class="visual-pc"><div><b>01</b><span>SIN INCIDENCIAS</span></div><i></i><small>LAB-01 <u class="green"></u></small></div>
+            <div class="visual-pc alert-pc"><div><b>03</b><span>REPORTE PENDIENTE</span></div><i></i><small>LAB-03 <u class="red"></u></small></div>
+            <div class="visual-pc"><div><b>05</b><span>REPORTE RESUELTO</span></div><i></i><small>LAB-05 <u class="green"></u></small></div>
+          </div>
+          <div class="visual-caption"><span>Identificar</span><b>→</b><span>Reportar</span><b>→</b><span>Dar seguimiento</span></div>
+        </div>
+      </div>
+      <div class="story-bottom"><span>1.º de Bachillerato Técnico</span><span>Tecnología al servicio de la comunidad.</span></div>
+    </section>
+    <section class="login-panel">
+      <div class="login-card">
+        <img src="./assets/savio-tech-logo.jpg" class="login-logo" alt="Salesianos SAVIO TECH" width="839" height="364">
+        <div id="login-content"></div>
+        <p class="login-footnote">La plataforma organiza reportes de usuarios.<br>La revisión del equipo corresponde al responsable técnico.</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="app-shell" class="app-shell" hidden>
+    <div id="sidebar-shade" class="sidebar-shade" hidden></div>
+    <aside id="sidebar" class="sidebar" aria-label="Navegación principal">
+      <a href="#inicio" class="brand-link" aria-label="SAVIO TECH, inicio"><img src="./assets/savio-tech-logo.jpg" alt="Salesianos SAVIO TECH" width="839" height="364"></a>
+      <div class="sidebar-context"><span class="context-dot"></span><span>Laboratorio de computación<small>1.º Bachillerato · EXPOSAVIO 2026</small></span></div>
+      <span class="nav-heading">ESPACIO DE TRABAJO</span>
+      <nav id="primary-nav"></nav>
+      <div class="sidebar-bottom">
+        <div class="school-note"><span class="school-note-icon">S</span><p>Tecnología con propósito.<small>Cuidar también es aprender.</small></p></div>
+        <button id="logout-button" class="logout-button" type="button"></button>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-left"><button id="menu-button" class="icon-button mobile-menu" aria-label="Abrir menú" aria-controls="sidebar" aria-expanded="false" type="button"></button><span class="breadcrumb">Laboratorio <span>/</span> <strong id="breadcrumb-current">Resumen</strong></span></div>
+        <div class="topbar-right"><span id="mode-indicator" class="mode-indicator"></span><button id="refresh-button" class="icon-button" aria-label="Actualizar información" title="Actualizar información" type="button"></button><div class="user-chip"><span id="user-avatar" class="avatar"></span><span id="user-name"></span></div></div>
+      </header>
+      <div id="mode-banner" class="mode-banner" hidden></div>
+      <main id="main" tabindex="-1"><div class="initial-loading">Preparando tu espacio de trabajo…</div></main>
+      <footer class="app-footer"><span>SAVIO TECH <i>·</i> EXPOSAVIO 2026</span><span>Registro y seguimiento de incidencias del laboratorio</span></footer>
+    </div>
+  </div>
+  <dialog id="app-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast-region" class="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+  <noscript>Activa JavaScript en tu navegador para utilizar SAVIO TECH.</noscript>
+</body>
+</html>
